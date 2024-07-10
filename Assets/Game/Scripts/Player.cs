@@ -18,7 +18,8 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        var joystick = JoystickAxis();
+        var mobilejoystick = MobileJoystick.GetJoystickAxis();
+        var joystick = mobilejoystick.magnitude > 0? mobilejoystick : JoystickAxis();
         var direction = new Vector3(joystick.x, 0, joystick.y);
         if(useRootMotion) rigg.velocity = direction  * speed * Time.deltaTime;
         anim.SetFloat("Movement", joystick.magnitude, .25f, Time.deltaTime);
