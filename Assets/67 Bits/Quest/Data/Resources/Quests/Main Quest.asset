@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb9d7994f0cf194f857cd5e9d8dc494, type: 3}
+  m_Name: Main Quest
+  m_EditorClassIdentifier: 
+  Id: 9fd694f1-de5f-4867-ad47-cdf6aa34ae76
+  Icon: {fileID: -3168733581550749585, guid: f7043b7291f49844b9671b3d3dedcbb5, type: 3}
+  Title: Main Quest - Kill The Boss
+  Description: 
+  HasSteps: 1
+  CanSaveOnProgression: 1
+  Objectives:
+  - Name: KillEnemies
+    ObjectiveType: 1
+    TotalValue: 1
+    Description: 
+  LinkedQuests: []

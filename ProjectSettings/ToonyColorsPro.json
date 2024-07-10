@@ -1,0 +1,27 @@
+{
+    "AutoNames": true,
+    "SubFolders": true,
+    "OverwriteConfig": false,
+    "LoadAllShaders": false,
+    "CustomOutputPath": "/JMO Assets/Toony Colors Pro/Shaders Generated/",
+    "LastImplementationExportImportPath": "E:/My_Book/Newis/67-Bits/67_Bits_Arcade_Idle_Template/67Bits_Base/Assets",
+    "OpenedFoldouts": [
+        "LIGHTING",
+        "SURFACE",
+        "STYLIZATION",
+        "SPECIAL EFFECTS",
+        "TRANSPARENCY/BLENDING",
+        "SHADER STATES",
+        "OPTIONS",
+        "THIRD PARTY PLUGINS",
+        "TERRAIN"
+    ],
+    "UseCustomFont": true,
+    "CustomFont": {
+        "fileID": 12800000,
+        "guid": "8a406076b7de34849be1f35585875a66",
+        "type": 3
+    },
+    "CustomFontInitialized": true,
+    "Upgrade_Hybrid1toHybrid2_Done": true
+}
