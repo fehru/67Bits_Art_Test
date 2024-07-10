@@ -46,17 +46,20 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out GroundButton Event))
+        if (other.TryGetComponent(out GroundButton Event))
+        {
+            Event.Cancell();
             Event.StartCoroutine(Event.Fill(transform));
+        }
         if (other.TryGetComponent(out EnemyDamage Enemy))
         {
             Enemy.gameObject.SetActive(false);
             TakeDamage(30);
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent(out GroundButton Event))
-            Event.Cancell();
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.TryGetComponent(out GroundButton Event))
+    //        Event.Cancell();
+    //}
 }
