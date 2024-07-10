@@ -28,6 +28,7 @@ public class GroundButton : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         player.transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
+        player.transform.forward = transform.forward;
         StartCoroutine(PlayEvents());
     }
 

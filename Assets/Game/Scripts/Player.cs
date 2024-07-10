@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float rotationSpeed;
     private Animator anim;
     private Rigidbody rigg;
     private void Awake()
@@ -16,7 +17,11 @@ public class Player : MonoBehaviour
     private void Update()
     {
         var joystick = JoystickAxis();
-        rigg.velocity = new Vector3(joystick.x, 0, joystick.y)  * speed * Time.deltaTime;
+        var direction = new Vector3(joystick.x, 0, joystick.y);
+        rigg.velocity = direction  * speed * Time.deltaTime;
+        anim.SetFloat("Movement", rigg.velocity.magnitude, .25f, Time.deltaTime);
+        if(direction.magnitude != 0)
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
     }
 
     private Vector2 JoystickAxis()
