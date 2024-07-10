@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
+    [SerializeField] private bool useRootMotion;
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
     private Animator anim;
@@ -12,14 +13,15 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        anim.applyRootMotion = useRootMotion;
         rigg = GetComponent<Rigidbody>();
     }
     private void Update()
     {
         var joystick = JoystickAxis();
         var direction = new Vector3(joystick.x, 0, joystick.y);
-        rigg.velocity = direction  * speed * Time.deltaTime;
-        anim.SetFloat("Movement", rigg.velocity.magnitude, .25f, Time.deltaTime);
+        if(useRootMotion) rigg.velocity = direction  * speed * Time.deltaTime;
+        anim.SetFloat("Movement", joystick.magnitude, .25f, Time.deltaTime);
         if(direction.magnitude != 0)
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
     }
