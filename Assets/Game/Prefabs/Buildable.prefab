@@ -274,15 +274,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Events:
-  - Name: New Event
+  - Name: Appear
     Delay: 0
     Events:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4647219186199255033}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 2095784943801109484}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -291,22 +291,17 @@ MonoBehaviour:
             m_StringArgument: ExampleTrigger
             m_BoolArgument: 1
           m_CallState: 2
-  - Name: New Event
-    Delay: 3
-    Events:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4647219186199255033}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 3449726984447831272}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: ExampleTrigger
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   buttonFill: {fileID: 7121777547561405483}
 --- !u!135 &3599400119939112664
@@ -395,7 +390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Constructable Example
+  m_text: Buildable
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1606ee7f383d25c44a72d9caac31575d, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 2a0bfb5106a9b3c45a56209b834275f5, type: 2}
@@ -422,12 +417,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.3
+  m_fontSize: 0.37
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0.22
-  m_fontSizeMax: 72
+  m_fontSizeMax: 0.37
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -480,12 +475,12 @@ GameObject:
   - component: {fileID: 7934749528541446291}
   - component: {fileID: 2095784943801109484}
   m_Layer: 0
-  m_Name: ExampleCube
+  m_Name: BuildableObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1661173903814905895
 Transform:
   m_ObjectHideFlags: 0
@@ -496,8 +491,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 2.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7018805344485807725}
   m_Father: {fileID: 4869507102259637632}
@@ -604,7 +599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4869507102259637632}
   m_Layer: 0
-  m_Name: Constructible
+  m_Name: Buildable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
