@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-[HelpURL("https://app.clickup.com/9017157017/v/dc/8cqdtct-1477/8cqdtct-30337")]
+[HelpURL("https://doc.clickup.com/9017157017/p/h/8cqdtct-30337/d473739efa49988")]
 public class GroundButton : MonoBehaviour
 {
     [Tooltip("The events will be played in order")]
