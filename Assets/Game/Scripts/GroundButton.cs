@@ -11,10 +11,13 @@ public class GroundButton : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private Image buttonFill;
-
+    private void Awake()
+    {
+        Cancell();
+    }
     public void Cancell()
     {
-        buttonFill.fillAmount = 1;
+        buttonFill.fillAmount = 0;
         StopAllCoroutines();
     }
 
