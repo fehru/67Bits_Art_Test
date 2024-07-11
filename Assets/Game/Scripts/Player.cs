@@ -11,12 +11,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Slider _lifeBar;
     private float currentLife;
-    private Animator anim;
+    public Animator Anim { get; private set; }
     private Rigidbody rigg;
     private void Awake()
     {
-        anim = GetComponent<Animator>();
-        anim.applyRootMotion = useRootMotion;
+        Anim = GetComponent<Animator>();
+        Anim.applyRootMotion = useRootMotion;
         _lifeBar.value = _lifeBar.maxValue = currentLife = 100;
         rigg = GetComponent<Rigidbody>();
     }
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         var joystick = mobilejoystick.magnitude > 0? mobilejoystick : JoystickAxis();
         var direction = new Vector3(joystick.x, 0, joystick.y);
         if(!useRootMotion) rigg.velocity = direction  * speed * Time.deltaTime;
-        anim.SetFloat("Movement", joystick.magnitude, .25f, Time.deltaTime);
+        Anim.SetFloat("Movement", joystick.magnitude, .25f, Time.deltaTime);
         if(direction.magnitude != 0)
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
         _lifeBar.transform.position = new Vector3(transform.position.x, _lifeBar.transform.position.y, transform.position.z);
@@ -35,8 +35,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentLife -= damage;
-        if (currentLife <= 0) anim.SetTrigger("Death");
-        else anim.SetTrigger("Hit");
+        if (currentLife <= 0) Anim.SetTrigger("Death");
+        else Anim.SetTrigger("Hit");
     }
     private Vector2 JoystickAxis()
     {

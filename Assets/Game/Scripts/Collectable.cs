@@ -26,7 +26,7 @@ public class Collectable : MonoBehaviour
     }
     private IEnumerator MoveToCollect()
     {
-        var targetTransform = FindObjectOfType<Player>().transform;
+        var player = FindObjectOfType<Player>();
         float lerpValue = 0;
 
         _onStartMove.Invoke();
@@ -34,10 +34,11 @@ public class Collectable : MonoBehaviour
         while (lerpValue < 1)
         {
             lerpValue += Time.deltaTime * movementSpeed;
-            transform.position = Vector3.Lerp(startPoint, targetTransform.position, movementCurve.Evaluate(lerpValue));
+            transform.position = Vector3.Lerp(startPoint, player.transform.position, movementCurve.Evaluate(lerpValue));
             yield return new WaitForEndOfFrame();
         }
         _onCollect.Invoke();
+        player.Anim.SetTrigger("Collect");
 
         yield return new WaitForSeconds(1);
         _onSpawn.Invoke();

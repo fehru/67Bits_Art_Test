@@ -32,6 +32,7 @@ public class GroundButton : MonoBehaviour
         }
         player.transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
         player.transform.forward = transform.forward;
+        buttonFill.fillAmount = 0;
         StartCoroutine(PlayEvents());
     }
 

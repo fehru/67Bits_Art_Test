@@ -782,11 +782,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Buildable
       objectReference: {fileID: 0}
-    - target: {fileID: 7302734834953693319, guid: 8ed3af76aebb86242b18c67300cf076d,
-        type: 3}
-      propertyPath: Events.Array.data[0].Events.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1527305457}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
