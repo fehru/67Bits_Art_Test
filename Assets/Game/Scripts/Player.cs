@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         var mobilejoystick = MobileJoystick.GetJoystickAxis();
         var joystick = mobilejoystick.magnitude > 0? mobilejoystick : JoystickAxis();
         var direction = new Vector3(joystick.x, 0, joystick.y);
-        if(useRootMotion) rigg.velocity = direction  * speed * Time.deltaTime;
+        if(!useRootMotion) rigg.velocity = direction  * speed * Time.deltaTime;
         anim.SetFloat("Movement", joystick.magnitude, .25f, Time.deltaTime);
         if(direction.magnitude != 0)
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
