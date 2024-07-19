@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46055107c7877af48ad229014fb03888
+guid: 13727b52cb6088f47940b89b3449c45f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -17,7 +17,14 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: <Root Transform>
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
+      : position error = 231.282684 mm\n\t'mixamorig:LeftLeg' : position error =
+      357.727173 mm\n\t'mixamorig:LeftFoot' : position error = 227.116211 mm\n\t'mixamorig:LeftToeBase'
+      : position error = 169.836594 mm\n\t'mixamorig:RightUpLeg' : position error
+      = 231.290939 mm\n\t'mixamorig:RightLeg' : position error = 358.230072 mm\n\t'mixamorig:RightFoot'
+      : position error = 227.429062 mm\n\t'mixamorig:RightToeBase' : position error
+      = 167.495590 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -33,11 +40,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: T-Pose
+      name: HIT
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 67
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -611,11 +618,12 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 46055107c7877af48ad229014fb03888,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
